@@ -14,7 +14,7 @@ export class PartOfSpeechComponent implements OnInit {
   public edit = true;
   public form;
   public returnedData: POSReturnDTO[];
-  public processedData: WordColorDTO[];
+  public processedData: WordColorDTO[]=[];
 
   constructor(private formBuilder: FormBuilder,
               private posService: PartOfSpeechService) {
@@ -43,9 +43,12 @@ export class PartOfSpeechComponent implements OnInit {
     this.returnedData.forEach(setn => {
       setn.wordTagPairs.forEach(pair => {
         let w = pair.word.word;
-        w = w.substr(10, w.indexOf(')'));
+        debugger;
+        w = w.substr(10);
+        w=w.substr(0,w.indexOf(')'))
         let t = pair.tag.tag;
-        t = t.substr(8, t.indexOf(')'));
+        t = t.substr(8);;
+        t=t.substr(0,w.indexOf(')'));
         if (w !== 'SentenceEnd' && w !== 'SentenceStart' && t !== 'PUNCT') {
           this.processedData.push({
             word: w,
