@@ -1,0 +1,44 @@
+<div class="container center-block">
+
+  <div class="row h-50">
+    <div class="col-md-8 h-100 d-table">
+      <form [formGroup]="form">
+      <div class="card card-body d-table-cell align-middle">
+          <p>
+              Enter a <strong>complete sentence</strong> (no single words!) and click at "POS-tag!".
+              The tagging works better when grammar and orthography are correct.</p>
+          <div id="form">
+            <div class="form-group">
+              <label ><strong>Text:</strong></label>
+
+              <textarea  *ngIf="edit" formControlName ="sentence" class="form-control" rows="2" id="text">John likes the blue house at the end of the street.</textarea>
+              <div *ngIf="!edit" class="textTagged">
+                <span *ngFor="let item of processedData | keyvalue">
+                  <span [style.background-color]="item.value">{{item.key}}</span>
+                </span>
+              </div>
+            </div>
+            <div class="btn-toolbar" >
+                <button type="button" class="btn btn-info" *ngIf="!edit" id="submit"  (click)="goToEditMode()">Edit text</button>
+                <button type="button" class="btn btn-success" *ngIf="edit" id="edit" (click)="submitValue()">POS-tag!</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+    <div class="col-md-4">
+      <div class="colors">
+        <div class="tagAdjective" style="">Adjective</div>
+        <div class="tagAdverb" style="">Adverb</div>
+        <div class="tagConjunction" style="">Conjunction</div>
+        <div class="tagDeterminer" style="">Determiner</div>
+        <div class="tagInterjection" style="display: none;">Interjection</div>
+        <div class="tagNoun" style="">Noun</div>
+        <div class="tagNumber" style="">Number</div>
+        <div class="tagPreposition" style="">Preposition</div>
+        <div class="tagPronoun" style="">Pronoun</div>
+        <div class="tagVerb" style="">Verb</div>
+      </div>
+    </div>
+</div>
+</div>
