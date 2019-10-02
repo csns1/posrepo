@@ -13,8 +13,8 @@
 
               <textarea  *ngIf="edit" formControlName ="sentence" class="form-control" rows="2" id="text">John likes the blue house at the end of the street.</textarea>
               <div *ngIf="!edit" class="textTagged">
-                <span *ngFor="let item of processedData | keyvalue">
-                  <span [style.background-color]="item.value">{{item.key}}</span>
+                <span *ngFor="let item of processedData ">
+                  <span [ngClass]="item.class">{{item.word}}</span>
                 </span>
               </div>
             </div>
