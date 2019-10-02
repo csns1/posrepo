@@ -23,17 +23,10 @@ export class PartOfSpeechComponent implements OnInit {
 
   submitValue() {
     const splittedValue = this.form.value.sentence.split(/\s+/);
-    splittedValue.forEach(e => {
-      if (e.length > 4) {
-      this.processedData[e] = 'blue';
-      } else {
-        this.processedData[e] = 'red';
-      }
+    this.posService.postService(splittedValue).subscribe(data => {
+      this.processedData = data;
+      this.edit = false;
     });
-    this.edit = false;
-    // this.posService.postService(splittedValue).subscribe(data => {
-    //   this.processedData = data;
-    // });
   }
 
   goToEditMode() {
