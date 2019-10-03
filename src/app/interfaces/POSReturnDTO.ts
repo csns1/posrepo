@@ -7,7 +7,7 @@ export class TagDTO {
 }
 
 export interface POSReturnDTO {
-  wordTagPairs: WordTagPairDTO[]
+  wordTagPairs: WordTagPairDTO[];
 }
 
 export interface WordTagPairDTO {

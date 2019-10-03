@@ -10,15 +10,15 @@
 .tagVerb { background-color: #cf6; }
 .tagOther { background-color: #fff; }
 
-.ADJECTIVE { background-color: #fc6; }
-.ADVERB { background-color: #c99; }
+.ADJ { background-color: #fc6; }
+.ADV { background-color: #c99; }
 .CONJ { background-color: #cc9; }
-.tagDeterminer { background-color: #99c; }
+.DET { background-color: #99c; }
 .INTERJECTION { background-color: #6f6; }
 .NOUN { background-color: #ccc; }
 .NUMBER { background-color: #6c9; }
 .PROPN { background-color: #f9c; }
-.PRONOUN { background-color: #ee7; }
+.PRON { background-color: #ee7; }
 .VERB { background-color: #cf6; }
 .OTHER { background-color: #fff; }
 
@@ -31,6 +31,7 @@
   margin-top: 3px;
   padding: 3px 7px 3px 7px;
   border-radius: 3px;
+  white-space: nowrap;
 }
 .textTagged {
   border: 1px solid #e3e3e3;
@@ -39,4 +40,7 @@
   padding: 4px;
   line-height: 1.8em;
   min-height: 60px;
+}
+.posForm{
+  max-width: 700px;
 }

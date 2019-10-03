@@ -2,8 +2,8 @@
 
   <div class="row h-50">
     <div class="col-md-8 h-100 d-table">
-      <form [formGroup]="form">
-      <div class="card card-body d-table-cell align-middle">
+      <form [formGroup]="form" >
+      <div class="card card-body d-table-cell align-middle posForm">
           <p>
               Enter a <strong>complete sentence</strong> (no single words!) and click at "POS-tag!".
               The tagging works better when grammar and orthography are correct.</p>
@@ -14,7 +14,7 @@
               <textarea  *ngIf="edit" formControlName ="sentence" class="form-control" rows="2" id="text">John likes the blue house at the end of the street.</textarea>
               <div *ngIf="!edit" class="textTagged">
                 <span *ngFor="let item of processedData ">
-                  <span [className]="item.class">{{item.word}}</span>
+                  <span [ngClass]="item.class">{{item.word}}</span>
                 </span>
               </div>
             </div>
